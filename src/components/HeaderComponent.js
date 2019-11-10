@@ -72,8 +72,8 @@ class Header extends Component {
                     <div className="container">
                         <div className="row row-header">
                             <div className="col-12 col-sm-6">
-                                <h1>Better Book Reviews</h1>
-                                <p>Reviews and recommendations from the community</p>
+                                <h1 className="jumbotron-text">Better Book Reviews</h1>
+                                <p className="jumbotron-text">Reviews and recommendations from the community</p>
                             </div>
                         </div>
                     </div>
