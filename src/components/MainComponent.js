@@ -8,7 +8,7 @@ import Header from './HeaderComponent';
 import Home from './HomeComponent';
 import Footer from './FooterComponent';
 import Contact from './ContactComponent';
-import About from './AboutComponent';
+import Genres from './AboutComponent';
 
 import { DISHES } from '../shared/dishes';
 import { COMMENTS } from '../shared/comments';
@@ -74,13 +74,13 @@ class Main extends Component {
             );
         }
 
-        const AboutUs = () => {
-            return (
-                <About 
-                    leaders={this.props.leaders}  
-                />
-            )
-        }
+        // const Genres = () => {
+        //     return (
+        //         <Genres 
+        //             leaders={this.props.leaders}  
+        //         />
+        //     )
+        // }
 
         const DishWithId = ({match}) => {
             return(
@@ -102,7 +102,7 @@ class Main extends Component {
                         <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
                             <Switch location={this.props.locationitch}>
                                 <Route path='/home' component={HomePage} />
-                                <Route exact path='/aboutus' render={() => <AboutUs leaders={this.props.leaders} />} />
+                                <Route exact path='/genres' render={() => <Genres leaders={this.props.leaders} />} />
                                 <Route exact path='/menu' render={() => <Menu dishes={this.props.dishes} />} />
                                 <Route path='/menu/:dishId' component={DishWithId} />
                                 <Route exact path='/contactus' render={() => <Contact resetFeedbackForm={this.props.resetFeedbackForm} postFeedback={this.props.postFeedback} />} />

@@ -28,7 +28,7 @@ const RenderLeader = (props) => {
     }
 }
 
-function About(props) {
+function Genres(props) {
 
     const leaders = props.leaders.leaders.map((leader) => {
         return (
@@ -102,4 +102,4 @@ function About(props) {
     );
 }
 
-export default About;
+export default Genres;
