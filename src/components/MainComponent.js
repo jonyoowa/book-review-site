@@ -7,8 +7,8 @@ import DishDetail from './DishdetailComponent';
 import Header from './HeaderComponent';
 import Home from './HomeComponent';
 import Footer from './FooterComponent';
-import Contact from './ContactComponent';
-import Genres from './AboutComponent';
+import About from './AboutComponent';
+import Genres from './GenresComponent';
 
 import { DISHES } from '../shared/dishes';
 import { COMMENTS } from '../shared/comments';
@@ -105,7 +105,7 @@ class Main extends Component {
                                 <Route exact path='/genres' render={() => <Genres leaders={this.props.leaders} />} />
                                 <Route exact path='/menu' render={() => <Menu dishes={this.props.dishes} />} />
                                 <Route path='/menu/:dishId' component={DishWithId} />
-                                <Route exact path='/contactus' render={() => <Contact resetFeedbackForm={this.props.resetFeedbackForm} postFeedback={this.props.postFeedback} />} />
+                                <Route exact path='/about' render={() => <About resetFeedbackForm={this.props.resetFeedbackForm} postFeedback={this.props.postFeedback} />} />
                                 <Redirect to="/home" />
                             </Switch>
                         </CSSTransition>
