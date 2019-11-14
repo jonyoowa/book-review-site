@@ -11,8 +11,10 @@ function Footer(props) {
                     <ul className="list-unstyled">
                         <li><Link to='/home'>Home</Link></li>
                         <li><Link to='/genres'>Genres</Link></li>
-                        <li><Link to='/menu'>Menu</Link></li>
-                        <li><Link to='/about'>Contact Us</Link></li>
+                        <li><Link to='/about'>About</Link></li>
+                        <li><Link to='/music'>Music</Link></li>
+                        <li><Link to='/books'>Books</Link></li>
+                        <li><Link to='/movies'>Movies</Link></li>
                     </ul>
                 </div>
                 <div className="col-7 col-sm-5">
@@ -40,7 +42,7 @@ function Footer(props) {
             </div>
             <div className="row justify-content-center">             
                 <div className="col-auto">
-                    <p>© Copyright 2018 Ristorante Con Fusion</p>
+                    <p>© Copyright 2019</p>
                 </div>
             </div>
         </div>

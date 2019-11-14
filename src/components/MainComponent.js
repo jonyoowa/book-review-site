@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { actions } from 'react-redux-form';
-import Menu from './MenuComponent';
-import DishDetail from './DishdetailComponent';
+
 import Header from './HeaderComponent';
 import Home from './HomeComponent';
 import Footer from './FooterComponent';
 import About from './AboutComponent';
+
 import Genres from './GenresComponent';
+
 import Music from './MusicComponent';
 import Books from './BooksComponent';
 import Movies from './MoviesComponent';
@@ -17,6 +18,7 @@ import { DISHES } from '../shared/dishes';
 import { COMMENTS } from '../shared/comments';
 import { PROMOTIONS } from '../shared/promotions';
 import { LEADERS } from '../shared/leaders';
+
 import { ALBUMS } from '../shared/albums';
 import { BOOKS } from '../shared/books';
 import { MOVIES } from '../shared/movies';
@@ -30,6 +32,7 @@ const mapStateToProps = state => {
         comments: state.comments,
         promotions: state.promotions,
         leaders: state.leaders,
+
         albums: state.albums,
         books: state.books,
         movies: state.movies
@@ -59,6 +62,7 @@ class Main extends Component {
             comments: COMMENTS,
             promotions: PROMOTIONS,
             leaders: LEADERS,
+
             albums: ALBUMS,
             books: BOOKS,
             movies: MOVIES
@@ -94,18 +98,18 @@ class Main extends Component {
             );
         }
 
-        const DishWithId = ({match}) => {
-            return(
-                <DishDetail 
-                    dish={this.props.dishes.dishes.filter((dish) => dish.id === parseInt(match.params.dishId,10))[0]}
-                    isLoading={this.props.dishes.isLoading}
-                    errMess={this.props.dishes.errMess}
-                    comments={this.props.comments.comments.filter((comment) => comment.dishId === parseInt(match.params.dishId,10))}
-                    commentsErrMess={this.props.comments.errMess}
-                    postComment={this.props.postComment}
-                />
-            );
-        };
+        // const DishWithId = ({match}) => {
+        //     return(
+        //         <DishDetail 
+        //             dish={this.props.dishes.dishes.filter((dish) => dish.id === parseInt(match.params.dishId,10))[0]}
+        //             isLoading={this.props.dishes.isLoading}
+        //             errMess={this.props.dishes.errMess}
+        //             comments={this.props.comments.comments.filter((comment) => comment.dishId === parseInt(match.params.dishId,10))}
+        //             commentsErrMess={this.props.comments.errMess}
+        //             postComment={this.props.postComment}
+        //         />
+        //     );
+        // };
         
         return (
             <div>
@@ -115,8 +119,6 @@ class Main extends Component {
                             <Switch location={this.props.locationitch}>
                                 <Route path='/home' component={HomePage} />
                                 <Route exact path='/genres' render={() => <Genres leaders={this.props.leaders} />} />
-                                <Route exact path='/menu' render={() => <Menu dishes={this.props.dishes} />} />
-                                <Route path='/menu/:dishId' component={DishWithId} />
                                 <Route exact path='/about' render={() => <About resetFeedbackForm={this.props.resetFeedbackForm} postFeedback={this.props.postFeedback} />} />
                                 <Route exact path='/music' render={() => <Music albums={this.props.albums} />} />
                                 <Route exact path='/books' render={() => <Books books={this.props.books} />} />
