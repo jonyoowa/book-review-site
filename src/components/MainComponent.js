@@ -9,13 +9,15 @@ import Home from './HomeComponent';
 import Footer from './FooterComponent';
 import About from './AboutComponent';
 import Genres from './GenresComponent';
+import Music from './MusicComponent';
 
 import { DISHES } from '../shared/dishes';
 import { COMMENTS } from '../shared/comments';
 import { PROMOTIONS } from '../shared/promotions';
 import { LEADERS } from '../shared/leaders';
+import { ALBUMS } from '../shared/albums';
 
-import { postComment, fetchDishes, fetchComments, fetchPromos, fetchLeaders, postFeedback } from '../redux/ActionCreators';
+import { postComment, fetchDishes, fetchComments, fetchPromos, fetchLeaders, postFeedback, fetchAlbums } from '../redux/ActionCreators';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const mapStateToProps = state => {
@@ -23,7 +25,8 @@ const mapStateToProps = state => {
         dishes: state.dishes,
         comments: state.comments,
         promotions: state.promotions,
-        leaders: state.leaders
+        leaders: state.leaders,
+        albums: state.albums
     }
 }   
 
@@ -34,7 +37,10 @@ const mapDispatchToProps = dispatch => ({
     fetchComments: () => dispatch(fetchComments()),
     fetchPromos: () => dispatch(fetchPromos()),
     fetchLeaders: () => dispatch(fetchLeaders()),
-    postFeedback: (feedback) => dispatch(postFeedback(feedback))
+    postFeedback: (feedback) => dispatch(postFeedback(feedback)),
+
+    fetchAlbums: () => dispatch(fetchAlbums())
+
 });  
 
 class Main extends Component {
@@ -45,7 +51,8 @@ class Main extends Component {
             dishes: DISHES,
             comments: COMMENTS,
             promotions: PROMOTIONS,
-            leaders: LEADERS
+            leaders: LEADERS,
+            albums: ALBUMS
         };
     }   
 
@@ -55,6 +62,8 @@ class Main extends Component {
         this.props.fetchPromos();
 
         this.props.fetchLeaders();
+
+        this.props.fetchAlbums();
     }
     
     render() {
@@ -74,14 +83,6 @@ class Main extends Component {
             );
         }
 
-        // const Genres = () => {
-        //     return (
-        //         <Genres 
-        //             leaders={this.props.leaders}  
-        //         />
-        //     )
-        // }
-
         const DishWithId = ({match}) => {
             return(
                 <DishDetail 
@@ -94,7 +95,7 @@ class Main extends Component {
                 />
             );
         };
-
+        
         return (
             <div>
                 <Header />
@@ -106,6 +107,7 @@ class Main extends Component {
                                 <Route exact path='/menu' render={() => <Menu dishes={this.props.dishes} />} />
                                 <Route path='/menu/:dishId' component={DishWithId} />
                                 <Route exact path='/about' render={() => <About resetFeedbackForm={this.props.resetFeedbackForm} postFeedback={this.props.postFeedback} />} />
+                                <Route exact path='/music' render={() => <Music albums={this.props.albums} />} />
                                 <Redirect to="/home" />
                             </Switch>
                         </CSSTransition>

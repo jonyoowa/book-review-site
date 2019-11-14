@@ -1,6 +1,47 @@
 import * as ActionTypes from './ActionTypes';
 import { baseUrl } from '../shared/baseUrl';
 
+//
+
+export const fetchAlbums = () => (dispatch) => {
+
+    dispatch(albumsLoading(true));
+
+    return fetch(baseUrl + 'albums')
+    .then(response => {
+        if (response.ok) {
+            return response;
+        } else {
+            var error = new Error('Error ' + response.status + ': ' + response.statusText);
+            error.response = response;
+            throw error;
+        }
+    }, 
+    error => {
+        var errmess = new Error(error.message);
+        throw errmess;
+    })
+    .then(response => response.json())
+    .then(albums => dispatch(addAlbums(albums)))
+    .catch(error => dispatch(albumsFailed(error.message)));
+}
+
+export const albumsLoading = () => ({
+    type: ActionTypes.ALBUMS_LOADING
+});
+
+export const albumsFailed = (errmess) => ({
+    type: ActionTypes.ALBUMS_FAILED,
+    payload: errmess
+});
+
+export const addAlbums = (albums) => ({
+    type: ActionTypes.ADD_ALBUMS,
+    payload: albums
+});
+
+//
+
 export const addComment = (comment) => ({
     type: ActionTypes.ADD_COMMENT,
     payload: comment

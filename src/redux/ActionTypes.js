@@ -14,3 +14,8 @@ export const LEADERS_LOADING = 'LEADERS_LOADING';
 export const ADD_LEADERS = 'ADD_LEADERS';
 // Leaders failed to load
 export const LEADERS_FAILED = 'LEADERS_FAILED';
+
+
+export const ALBUMS_LOADING = 'ALBUMS_LOADING';
+export const ADD_ALBUMS = 'ADD_ALBUMS';
+export const ALBUMS_FAILED = 'ALBUMS_FAILED';
