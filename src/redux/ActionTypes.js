@@ -19,3 +19,7 @@ export const LEADERS_FAILED = 'LEADERS_FAILED';
 export const ALBUMS_LOADING = 'ALBUMS_LOADING';
 export const ADD_ALBUMS = 'ADD_ALBUMS';
 export const ALBUMS_FAILED = 'ALBUMS_FAILED';
+
+export const BOOKS_LOADING = 'BOOKS_LOADING';
+export const ADD_BOOKS = 'ADD_BOOKS';
+export const BOOKS_FAILED = 'BOOKS_FAILED';

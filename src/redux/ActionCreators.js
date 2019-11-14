@@ -40,6 +40,45 @@ export const addAlbums = (albums) => ({
     payload: albums
 });
 
+
+export const fetchBooks = () => (dispatch) => {
+
+    dispatch(booksLoading(true));
+
+    return fetch(baseUrl + 'books')
+    .then(response => {
+        if (response.ok) {
+            return response;
+        } else {
+            var error = new Error('Error ' + response.status + ': ' + response.statusText);
+            error.response = response;
+            throw error;
+        }
+    }, 
+    error => {
+        var errmess = new Error(error.message);
+        throw errmess;
+    })
+    .then(response => response.json())
+    .then(books => dispatch(addBooks(books)))
+    .catch(error => dispatch(booksFailed(error.message)));
+}
+
+export const booksLoading = () => ({
+    type: ActionTypes.BOOKS_LOADING
+});
+
+export const booksFailed = (errmess) => ({
+    type: ActionTypes.BOOKS_FAILED,
+    payload: errmess
+});
+
+export const addBooks = (books) => ({
+    type: ActionTypes.ADD_BOOKS,
+    payload: books
+});
+
+
 //
 
 export const addComment = (comment) => ({

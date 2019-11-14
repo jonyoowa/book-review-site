@@ -10,14 +10,16 @@ import Footer from './FooterComponent';
 import About from './AboutComponent';
 import Genres from './GenresComponent';
 import Music from './MusicComponent';
+import Books from './BooksComponent';
 
 import { DISHES } from '../shared/dishes';
 import { COMMENTS } from '../shared/comments';
 import { PROMOTIONS } from '../shared/promotions';
 import { LEADERS } from '../shared/leaders';
 import { ALBUMS } from '../shared/albums';
+import { BOOKS } from '../shared/books';
 
-import { postComment, fetchDishes, fetchComments, fetchPromos, fetchLeaders, postFeedback, fetchAlbums } from '../redux/ActionCreators';
+import { postComment, fetchDishes, fetchComments, fetchPromos, fetchLeaders, postFeedback, fetchAlbums, fetchBooks } from '../redux/ActionCreators';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const mapStateToProps = state => {
@@ -26,7 +28,8 @@ const mapStateToProps = state => {
         comments: state.comments,
         promotions: state.promotions,
         leaders: state.leaders,
-        albums: state.albums
+        albums: state.albums,
+        books: state.books
     }
 }   
 
@@ -39,8 +42,8 @@ const mapDispatchToProps = dispatch => ({
     fetchLeaders: () => dispatch(fetchLeaders()),
     postFeedback: (feedback) => dispatch(postFeedback(feedback)),
 
-    fetchAlbums: () => dispatch(fetchAlbums())
-
+    fetchAlbums: () => dispatch(fetchAlbums()),
+    fetchBooks: () => dispatch(fetchBooks())
 });  
 
 class Main extends Component {
@@ -52,7 +55,8 @@ class Main extends Component {
             comments: COMMENTS,
             promotions: PROMOTIONS,
             leaders: LEADERS,
-            albums: ALBUMS
+            albums: ALBUMS,
+            books: BOOKS
         };
     }   
 
@@ -64,6 +68,7 @@ class Main extends Component {
         this.props.fetchLeaders();
 
         this.props.fetchAlbums();
+        this.props.fetchBooks();
     }
     
     render() {
@@ -108,6 +113,8 @@ class Main extends Component {
                                 <Route path='/menu/:dishId' component={DishWithId} />
                                 <Route exact path='/about' render={() => <About resetFeedbackForm={this.props.resetFeedbackForm} postFeedback={this.props.postFeedback} />} />
                                 <Route exact path='/music' render={() => <Music albums={this.props.albums} />} />
+                                {/* { alert(JSON.stringify(this.props.books)) } */}
+                                <Route exact path='/books' render={() => <Books books={this.props.books} />} />
                                 <Redirect to="/home" />
                             </Switch>
                         </CSSTransition>
