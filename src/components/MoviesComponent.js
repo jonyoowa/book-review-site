@@ -28,7 +28,6 @@ const RenderMovies = (movie) => {
 }
 
 const Movies = (props) => {
-    alert(JSON.stringify(props))
     const movies = props.movies.movies.map((movie) => {
         return (
             <RenderMovies movie={movie} />

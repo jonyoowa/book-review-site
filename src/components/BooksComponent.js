@@ -28,7 +28,6 @@ const RenderBooks = (book) => {
 }
 
 const Books = (props) => {
-    alert(JSON.stringify(props))
     const books = props.books.books.map((book) => {
         return (
             <RenderBooks book={book} />

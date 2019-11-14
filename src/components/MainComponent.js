@@ -8,8 +8,6 @@ import Home from './HomeComponent';
 import Footer from './FooterComponent';
 import About from './AboutComponent';
 
-import Genres from './GenresComponent';
-
 import Music from './MusicComponent';
 import Books from './BooksComponent';
 import Movies from './MoviesComponent';
@@ -117,8 +115,7 @@ class Main extends Component {
                     <TransitionGroup>
                         <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
                             <Switch location={this.props.locationitch}>
-                                <Route path='/home' component={HomePage} />
-                                <Route exact path='/genres' render={() => <Genres leaders={this.props.leaders} />} />
+                                <Route path='/home' component={HomePage} />                                
                                 <Route exact path='/about' render={() => <About resetFeedbackForm={this.props.resetFeedbackForm} postFeedback={this.props.postFeedback} />} />
                                 <Route exact path='/music' render={() => <Music albums={this.props.albums} />} />
                                 <Route exact path='/books' render={() => <Books books={this.props.books} />} />

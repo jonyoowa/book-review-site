@@ -53,12 +53,6 @@ class Header extends Component {
                                     <NavLink className="nav-link"  to='/home'><span className="fa fa-home fa-lg"></span> Home</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="nav-link" to='/genres'><span className="fa fa-info fa-lg"></span> Genres</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink className="nav-link" to='/about'><span className="fa fa-address-card fa-lg"></span> About</NavLink>
-                                </NavItem>
-                                <NavItem>
                                     <NavLink className="nav-link" to='/music'><span className="fa fa-address-card fa-lg"></span> Music</NavLink>
                                 </NavItem>
                                 <NavItem>
@@ -66,6 +60,9 @@ class Header extends Component {
                                 </NavItem>
                                 <NavItem>
                                     <NavLink className="nav-link" to='/movies'><span className="fa fa-address-card fa-lg"></span> Movies</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink className="nav-link" to='/about'><span className="fa fa-info fa-lg"></span> About</NavLink>
                                 </NavItem>
                             </Nav>
                             <Nav className="ml-auto" navbar>
