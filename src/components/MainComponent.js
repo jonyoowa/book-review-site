@@ -11,6 +11,7 @@ import About from './AboutComponent';
 import Genres from './GenresComponent';
 import Music from './MusicComponent';
 import Books from './BooksComponent';
+import Movies from './MoviesComponent';
 
 import { DISHES } from '../shared/dishes';
 import { COMMENTS } from '../shared/comments';
@@ -18,8 +19,9 @@ import { PROMOTIONS } from '../shared/promotions';
 import { LEADERS } from '../shared/leaders';
 import { ALBUMS } from '../shared/albums';
 import { BOOKS } from '../shared/books';
+import { MOVIES } from '../shared/movies';
 
-import { postComment, fetchDishes, fetchComments, fetchPromos, fetchLeaders, postFeedback, fetchAlbums, fetchBooks } from '../redux/ActionCreators';
+import { postComment, fetchDishes, fetchComments, fetchPromos, fetchLeaders, postFeedback, fetchAlbums, fetchBooks, fetchMovies } from '../redux/ActionCreators';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const mapStateToProps = state => {
@@ -29,7 +31,8 @@ const mapStateToProps = state => {
         promotions: state.promotions,
         leaders: state.leaders,
         albums: state.albums,
-        books: state.books
+        books: state.books,
+        movies: state.movies
     }
 }   
 
@@ -43,7 +46,8 @@ const mapDispatchToProps = dispatch => ({
     postFeedback: (feedback) => dispatch(postFeedback(feedback)),
 
     fetchAlbums: () => dispatch(fetchAlbums()),
-    fetchBooks: () => dispatch(fetchBooks())
+    fetchBooks: () => dispatch(fetchBooks()),
+    fetchMovies: () => dispatch(fetchMovies())
 });  
 
 class Main extends Component {
@@ -56,7 +60,8 @@ class Main extends Component {
             promotions: PROMOTIONS,
             leaders: LEADERS,
             albums: ALBUMS,
-            books: BOOKS
+            books: BOOKS,
+            movies: MOVIES
         };
     }   
 
@@ -69,6 +74,7 @@ class Main extends Component {
 
         this.props.fetchAlbums();
         this.props.fetchBooks();
+        this.props.fetchMovies();
     }
     
     render() {
@@ -113,8 +119,8 @@ class Main extends Component {
                                 <Route path='/menu/:dishId' component={DishWithId} />
                                 <Route exact path='/about' render={() => <About resetFeedbackForm={this.props.resetFeedbackForm} postFeedback={this.props.postFeedback} />} />
                                 <Route exact path='/music' render={() => <Music albums={this.props.albums} />} />
-                                {/* { alert(JSON.stringify(this.props.books)) } */}
                                 <Route exact path='/books' render={() => <Books books={this.props.books} />} />
+                                <Route exact path='/movies' render={() => <Movies movies={this.props.movies} />} />
                                 <Redirect to="/home" />
                             </Switch>
                         </CSSTransition>

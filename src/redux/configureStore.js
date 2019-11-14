@@ -5,6 +5,7 @@ import { Promotions } from './promotions';
 import { Leaders } from './leaders';
 import { Albums } from './albums';
 import { Books } from './books';
+import { Movies } from './movies';
 
 import { InitialFeedback } from './forms';
 import thunk from 'redux-thunk';
@@ -20,6 +21,7 @@ export const ConfigureStore = () => {
             leaders: Leaders,
             albums: Albums,
             books: Books,
+            movies: Movies,
             ...createForms({
                 feedback: InitialFeedback
             })
