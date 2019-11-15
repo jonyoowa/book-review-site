@@ -30,14 +30,20 @@ const RenderMovies = (movie) => {
 const Movies = (props) => {
     const movies = props.movies.movies.map((movie) => {
         return (
-            <RenderMovies movie={movie} />
+            <div className="col-12 col-md-5 m-1">
+                <RenderMovies movie={movie} />
+            </div>
         );
     });
 
     return (
-        <div>
-            <h1>Movies</h1> 
-            {movies}
+        <div className="container justify-content-center">
+            <div className="row">
+                <h1>Movies</h1> 
+            </div>
+            <div className="row">
+                {movies}
+            </div>
         </div>
     )
 }

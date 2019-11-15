@@ -45,7 +45,6 @@ class Header extends Component {
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
                         <NavbarBrand className="mr-auto" href="/">
-                            <img src='assets/images/logo.png' height="30" width="41" alt='Ristorante Con Fusion' />
                         </NavbarBrand>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
@@ -66,9 +65,6 @@ class Header extends Component {
                                 </NavItem>
                             </Nav>
                             <Nav className="ml-auto" navbar>
-                                <NavItem>
-                                    <Button outline onClick={this.toggleModal}><span className="fa fa-sign-in fa-lg"></span> Login</Button>
-                                </NavItem>
                             </Nav>
                         </Collapse>
                     </div>
@@ -77,8 +73,8 @@ class Header extends Component {
                     <div className="container">
                         <div className="row row-header">
                             <div className="col-12 col-sm-6">
-                                <h1 className="jumbotron-text">Better Book Reviews</h1>
-                                <p className="jumbotron-text">Reviews and recommendations from the community</p>
+                                <h1 className="jumbotron-text">Jon's Reviews</h1>
+                                <p className="jumbotron-text">My reviews and opinions on popular music, books, and movies!</p>
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,8 @@
 import React from 'react';
 import {
     Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button
+    CardTitle, CardSubtitle, Button,
+    Container, Row, Col
 } from 'reactstrap';
 import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 import { Loading } from './LoadingComponent';
@@ -30,14 +31,20 @@ const RenderAlbums = (album) => {
 const Music = (props) => {
     const albums = props.albums.albums.map((album) => {
         return (
-            <RenderAlbums album={album} />
+            <div className="col-4 col-md-4 m-6">
+                <RenderAlbums album={album} />
+            </div>
         );
     });
 
     return (
-        <div>
-            <h1>Music</h1> 
-            {albums}
+        <div className="container justify-content-center">
+            <div className="row">
+                <h1>Music</h1> 
+            </div>
+            <div className="row">
+                {albums}
+            </div>
         </div>
     )
 }

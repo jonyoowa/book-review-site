@@ -86,12 +86,18 @@ class Main extends Component {
                     dish={this.props.dishes.dishes.filter((dish) => dish.featured)[0]}
                     dishesLoading={this.props.dishes.isLoading}
                     dishesErrMess={this.props.dishes.errMess}
+
                     promotion={this.props.promotions.promotions.filter((promo) => promo.featured)[0]}
                     promoLoading={this.props.promotions.isLoading}
                     promoErrMess={this.props.promotions.errMess}
+                    
                     leader={this.props.leaders.leaders.filter((leader) => leader.featured)[0]}
                     leadersLoading={this.props.leaders.isLoading}
                     leadersErrMess={this.props.leaders.errMess}
+                    
+                    book={this.props.books.books.filter((book) => book.featured)[0]}
+                    movie={this.props.movies.movies.filter((movie) => movie.featured)[0]}
+                    album={this.props.albums.albums.filter((album) => album.featured)[0]}
                 />  
             );
         }

@@ -30,14 +30,20 @@ const RenderBooks = (book) => {
 const Books = (props) => {
     const books = props.books.books.map((book) => {
         return (
-            <RenderBooks book={book} />
+            <div className="col-4 col-md-4 m-6">
+                <RenderBooks book={book} />
+            </div>
         );
     });
 
     return (
-        <div>
-            <h1>Books</h1> 
-            {books}
+        <div className="container justify-content-center">
+            <div className="row">
+                <h1>Books</h1> 
+            </div>
+            <div className="row">
+                {books}
+            </div>
         </div>
     )
 }
