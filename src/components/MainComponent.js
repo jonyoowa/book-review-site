@@ -12,20 +12,17 @@ import Music from './MusicComponent';
 import Books from './BooksComponent';
 import Movies from './MoviesComponent';
 
-import { DISHES } from '../shared/dishes';
 import { LEADERS } from '../shared/leaders';
 
 import { ALBUMS } from '../shared/albums';
 import { BOOKS } from '../shared/books';
 import { MOVIES } from '../shared/movies';
 
-import { fetchDishes, fetchLeaders, postFeedback, fetchAlbums, fetchBooks, fetchMovies } from '../redux/ActionCreators';
+import { fetchLeaders, postFeedback, fetchAlbums, fetchBooks, fetchMovies } from '../redux/ActionCreators';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const mapStateToProps = state => {
     return {
-        dishes: state.dishes,
-        promotions: state.promotions,
         leaders: state.leaders,
 
         albums: state.albums,
@@ -35,7 +32,6 @@ const mapStateToProps = state => {
 }   
 
 const mapDispatchToProps = dispatch => ({
-    fetchDishes: () => { dispatch(fetchDishes())},
     resetFeedbackForm: () => { dispatch(actions.reset('feedback'))},
     fetchLeaders: () => dispatch(fetchLeaders()),
     postFeedback: (feedback) => dispatch(postFeedback(feedback)),
@@ -50,7 +46,6 @@ class Main extends Component {
         super(props);
 
         this.state = {
-            dishes: DISHES,
             leaders: LEADERS,
 
             albums: ALBUMS,
@@ -60,8 +55,6 @@ class Main extends Component {
     }   
 
     componentDidMount() {
-        this.props.fetchDishes();
-
         this.props.fetchLeaders();
 
         this.props.fetchAlbums();
@@ -73,10 +66,6 @@ class Main extends Component {
         const HomePage = () => {
             return(
                 <Home 
-                    dish={this.props.dishes.dishes.filter((dish) => dish.featured)[0]}
-                    dishesLoading={this.props.dishes.isLoading}
-                    dishesErrMess={this.props.dishes.errMess}
-
                     leader={this.props.leaders.leaders.filter((leader) => leader.featured)[0]}
                     leadersLoading={this.props.leaders.isLoading}
                     leadersErrMess={this.props.leaders.errMess}
