@@ -13,7 +13,6 @@ import Books from './BooksComponent';
 import Movies from './MoviesComponent';
 
 import { DISHES } from '../shared/dishes';
-import { COMMENTS } from '../shared/comments';
 import { PROMOTIONS } from '../shared/promotions';
 import { LEADERS } from '../shared/leaders';
 
@@ -21,13 +20,12 @@ import { ALBUMS } from '../shared/albums';
 import { BOOKS } from '../shared/books';
 import { MOVIES } from '../shared/movies';
 
-import { postComment, fetchDishes, fetchComments, fetchPromos, fetchLeaders, postFeedback, fetchAlbums, fetchBooks, fetchMovies } from '../redux/ActionCreators';
+import { fetchDishes, fetchPromos, fetchLeaders, postFeedback, fetchAlbums, fetchBooks, fetchMovies } from '../redux/ActionCreators';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const mapStateToProps = state => {
     return {
         dishes: state.dishes,
-        comments: state.comments,
         promotions: state.promotions,
         leaders: state.leaders,
 
@@ -38,10 +36,8 @@ const mapStateToProps = state => {
 }   
 
 const mapDispatchToProps = dispatch => ({
-    postComment: (dishId, rating, author, comment) => dispatch(postComment(dishId, rating, author, comment)),
     fetchDishes: () => { dispatch(fetchDishes())},
     resetFeedbackForm: () => { dispatch(actions.reset('feedback'))},
-    fetchComments: () => dispatch(fetchComments()),
     fetchPromos: () => dispatch(fetchPromos()),
     fetchLeaders: () => dispatch(fetchLeaders()),
     postFeedback: (feedback) => dispatch(postFeedback(feedback)),
@@ -57,7 +53,6 @@ class Main extends Component {
 
         this.state = {
             dishes: DISHES,
-            comments: COMMENTS,
             promotions: PROMOTIONS,
             leaders: LEADERS,
 
@@ -69,7 +64,6 @@ class Main extends Component {
 
     componentDidMount() {
         this.props.fetchDishes();
-        this.props.fetchComments();
         this.props.fetchPromos();
 
         this.props.fetchLeaders();
@@ -90,7 +84,7 @@ class Main extends Component {
                     promotion={this.props.promotions.promotions.filter((promo) => promo.featured)[0]}
                     promoLoading={this.props.promotions.isLoading}
                     promoErrMess={this.props.promotions.errMess}
-                    
+
                     leader={this.props.leaders.leaders.filter((leader) => leader.featured)[0]}
                     leadersLoading={this.props.leaders.isLoading}
                     leadersErrMess={this.props.leaders.errMess}
@@ -101,19 +95,6 @@ class Main extends Component {
                 />  
             );
         }
-
-        // const DishWithId = ({match}) => {
-        //     return(
-        //         <DishDetail 
-        //             dish={this.props.dishes.dishes.filter((dish) => dish.id === parseInt(match.params.dishId,10))[0]}
-        //             isLoading={this.props.dishes.isLoading}
-        //             errMess={this.props.dishes.errMess}
-        //             comments={this.props.comments.comments.filter((comment) => comment.dishId === parseInt(match.params.dishId,10))}
-        //             commentsErrMess={this.props.comments.errMess}
-        //             postComment={this.props.postComment}
-        //         />
-        //     );
-        // };
         
         return (
             <div>
