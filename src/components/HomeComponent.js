@@ -7,10 +7,11 @@ import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
 import { FadeTransform } from 'react-animation-components';
 
-function RenderCard({item}) {
+function RenderCard({item, title}) {
     return(
         <FadeTransform in transformProps={{ exitTransform: 'scale(0.5) translateY(-50%)' }}>
             <Card>
+                <h1 className="text-center">{title}</h1>
                 <CardImg src={baseUrl + item.image} alt={item.name} />
                 <CardBody>
                     <CardTitle>{item.name}</CardTitle>
@@ -26,13 +27,13 @@ function Home(props) {
         <div className="container">
             <div className="row align-items-start">
                 <div className="col-12 col-md m-1">
-                    <RenderCard item={props.book ? props.book : {} } />
+                    <RenderCard item={props.book ? props.book : {} } title="Book" />
                 </div>
                 <div className="col-12 col-md m-1">
-                    <RenderCard item={props.movie ? props.movie : {} } />
+                    <RenderCard item={props.movie ? props.movie : {} } title="Movie" />
                 </div>
                 <div className="col-12 col-md m-1">
-                    <RenderCard item={props.album ? props.album : {} } />
+                    <RenderCard item={props.album ? props.album : {} } title="Music" />
                 </div>
             </div>
         </div>
