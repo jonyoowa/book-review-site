@@ -15,7 +15,6 @@ export const ConfigureStore = () => {
     const store = createStore(
         combineReducers({
             dishes: Dishes,
-            promotions: Promotions,
             leaders: Leaders,
             albums: Albums,
             books: Books,

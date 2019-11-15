@@ -13,14 +13,13 @@ import Books from './BooksComponent';
 import Movies from './MoviesComponent';
 
 import { DISHES } from '../shared/dishes';
-import { PROMOTIONS } from '../shared/promotions';
 import { LEADERS } from '../shared/leaders';
 
 import { ALBUMS } from '../shared/albums';
 import { BOOKS } from '../shared/books';
 import { MOVIES } from '../shared/movies';
 
-import { fetchDishes, fetchPromos, fetchLeaders, postFeedback, fetchAlbums, fetchBooks, fetchMovies } from '../redux/ActionCreators';
+import { fetchDishes, fetchLeaders, postFeedback, fetchAlbums, fetchBooks, fetchMovies } from '../redux/ActionCreators';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const mapStateToProps = state => {
@@ -38,7 +37,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
     fetchDishes: () => { dispatch(fetchDishes())},
     resetFeedbackForm: () => { dispatch(actions.reset('feedback'))},
-    fetchPromos: () => dispatch(fetchPromos()),
     fetchLeaders: () => dispatch(fetchLeaders()),
     postFeedback: (feedback) => dispatch(postFeedback(feedback)),
 
@@ -53,7 +51,6 @@ class Main extends Component {
 
         this.state = {
             dishes: DISHES,
-            promotions: PROMOTIONS,
             leaders: LEADERS,
 
             albums: ALBUMS,
@@ -64,7 +61,6 @@ class Main extends Component {
 
     componentDidMount() {
         this.props.fetchDishes();
-        this.props.fetchPromos();
 
         this.props.fetchLeaders();
 
@@ -80,10 +76,6 @@ class Main extends Component {
                     dish={this.props.dishes.dishes.filter((dish) => dish.featured)[0]}
                     dishesLoading={this.props.dishes.isLoading}
                     dishesErrMess={this.props.dishes.errMess}
-
-                    promotion={this.props.promotions.promotions.filter((promo) => promo.featured)[0]}
-                    promoLoading={this.props.promotions.isLoading}
-                    promoErrMess={this.props.promotions.errMess}
 
                     leader={this.props.leaders.leaders.filter((leader) => leader.featured)[0]}
                     leadersLoading={this.props.leaders.isLoading}
