@@ -12,19 +12,15 @@ import Music from './MusicComponent';
 import Books from './BooksComponent';
 import Movies from './MoviesComponent';
 
-import { LEADERS } from '../shared/leaders';
-
 import { ALBUMS } from '../shared/albums';
 import { BOOKS } from '../shared/books';
 import { MOVIES } from '../shared/movies';
 
-import { fetchLeaders, postFeedback, fetchAlbums, fetchBooks, fetchMovies } from '../redux/ActionCreators';
+import { postFeedback, fetchAlbums, fetchBooks, fetchMovies } from '../redux/ActionCreators';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const mapStateToProps = state => {
     return {
-        leaders: state.leaders,
-
         albums: state.albums,
         books: state.books,
         movies: state.movies
@@ -33,7 +29,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
     resetFeedbackForm: () => { dispatch(actions.reset('feedback'))},
-    fetchLeaders: () => dispatch(fetchLeaders()),
     postFeedback: (feedback) => dispatch(postFeedback(feedback)),
 
     fetchAlbums: () => dispatch(fetchAlbums()),
@@ -46,8 +41,6 @@ class Main extends Component {
         super(props);
 
         this.state = {
-            leaders: LEADERS,
-
             albums: ALBUMS,
             books: BOOKS,
             movies: MOVIES
@@ -55,8 +48,6 @@ class Main extends Component {
     }   
 
     componentDidMount() {
-        this.props.fetchLeaders();
-
         this.props.fetchAlbums();
         this.props.fetchBooks();
         this.props.fetchMovies();
@@ -66,10 +57,6 @@ class Main extends Component {
         const HomePage = () => {
             return(
                 <Home 
-                    leader={this.props.leaders.leaders.filter((leader) => leader.featured)[0]}
-                    leadersLoading={this.props.leaders.isLoading}
-                    leadersErrMess={this.props.leaders.errMess}
-                    
                     book={this.props.books.books.filter((book) => book.featured)[0]}
                     movie={this.props.movies.movies.filter((movie) => movie.featured)[0]}
                     album={this.props.albums.albums.filter((album) => album.featured)[0]}

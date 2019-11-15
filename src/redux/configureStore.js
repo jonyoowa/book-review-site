@@ -12,7 +12,6 @@ import { createForms } from 'react-redux-form';
 export const ConfigureStore = () => {
     const store = createStore(
         combineReducers({
-            leaders: Leaders,
             albums: Albums,
             books: Books,
             movies: Movies,
