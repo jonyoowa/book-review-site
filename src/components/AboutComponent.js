@@ -26,46 +26,44 @@ class About extends Component {
     render() {
         return(
             <div>
-
                 <div className="container">
                     <div className="row">
                         <Breadcrumb>
                             <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
-                            <BreadcrumbItem active>Contact Us</BreadcrumbItem>
+                            <BreadcrumbItem active>About</BreadcrumbItem>
                         </Breadcrumb>
+                    </div>
+                </div>    
+                <div className="container pb-4">
+                    <div className="row">
                         <div className="col-12">
-                            <h3>About Better Book Reviews</h3>
-                            <p>Better Book Reviews is an independent websiet for people with specific tastes in reading.</p>
+                            <h3>About Jon's Favorites</h3>
+                            <p>Reviews of my favorite music, books, and movies.</p>
                         </div>                
                     </div>
-
-                    <div className="row row-content">
+                    <div className="row">
                         <div className="col-12">
                             <h3>How to use this site</h3>
-                            <p>Get our list of reccomended books!</p>
-                            <p>See the hottest books by genre!</p>
-                            <p>View personal reviews made by the community to add on to your reading list!</p>
+                            <p>See my list of reccomended music/books/movies!</p>
+                            <p>This website displays a collection of my favorite media.</p>
+                            <p>Click on the card to view a more detailed overview of why I hold the album/book/movie in esteem.</p>
                         </div>
                     </div>
                 </div>    
-
-                <div>
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-12">
-                                <h3>Follow Us</h3>
-                            </div>
+                <div className="container pb-4">
+                    <div className="row">
+                        <div className="col-12">
+                            <h3>Follow Us</h3>
                         </div>
-
-                        <div className="row">
-                            <div className="col-12 btn-group" role="group">
-                                <a role="button" className="btn btn-primary"><i className="fa fa-facebook"></i> Facebook</a>
-                                <a role="button" className="btn btn-info"><i className="fa fa-skype"></i> Skype</a>
-                                <a role="button" className="btn btn-success"><i className="fa fa-linkedin"></i> Linkedin</a>
-                                <a role="button" className="btn btn-success"><i className="fa fa-pinterest"></i> Pinterest</a>
-                            </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-12 btn-group" role="group">
+                            <a role="button" className="btn btn-primary"><i className="fa fa-facebook"></i> Facebook</a>
+                            <a role="button" className="btn btn-info"><i className="fa fa-skype"></i> Skype</a>
+                            <a role="button" className="btn btn-secondary"><i className="fa fa-linkedin"></i> Linkedin</a>
+                            <a role="button" className="btn btn-danger"><i className="fa fa-pinterest"></i> Pinterest</a>
                         </div>
-
+                        <br />
                     </div>
                 </div>
             </div>
