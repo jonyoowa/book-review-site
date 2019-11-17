@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
-import { actions } from 'react-redux-form';
 
 import Header from './HeaderComponent';
 import Home from './HomeComponent';
@@ -16,7 +15,7 @@ import { ALBUMS } from '../shared/albums';
 import { BOOKS } from '../shared/books';
 import { MOVIES } from '../shared/movies';
 
-import { postFeedback, fetchAlbums, fetchBooks, fetchMovies } from '../redux/ActionCreators';
+import { fetchAlbums, fetchBooks, fetchMovies } from '../redux/ActionCreators';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const mapStateToProps = state => {
@@ -28,9 +27,6 @@ const mapStateToProps = state => {
 }   
 
 const mapDispatchToProps = dispatch => ({
-    resetFeedbackForm: () => { dispatch(actions.reset('feedback'))},
-    postFeedback: (feedback) => dispatch(postFeedback(feedback)),
-
     fetchAlbums: () => dispatch(fetchAlbums()),
     fetchBooks: () => dispatch(fetchBooks()),
     fetchMovies: () => dispatch(fetchMovies())
