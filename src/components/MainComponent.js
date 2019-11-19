@@ -10,6 +10,7 @@ import About from './AboutComponent';
 import Music from './MusicComponent';
 import Books from './BooksComponent';
 import Movies from './MoviesComponent';
+import DetailedMediaReview from './MediaReviewComponent';
 
 import { ALBUMS } from '../shared/albums';
 import { BOOKS } from '../shared/books';
@@ -60,6 +61,37 @@ class Main extends Component {
             );
         }
         
+        const DetailedAlbumReview = ({match}) => {
+            // alert("DetailedAlbumReview " + JSON.stringify(match));
+            // alert(JSON.stringify(this.props.match.params));
+            // alert(JSON.stringify(this.props.albums.albums));
+
+            return(
+                <DetailedMediaReview
+                    item={this.props.albums.albums.filter((album) => album.id === parseInt(match.params.albumId,10))[0]}
+                    category="Music"
+                />
+            );
+        };
+
+        const DetailedBookReview = ({match}) => {
+            return(
+                <DetailedMediaReview
+                    item={this.props.books.books.filter((book) => book.id === parseInt(match.params.bookId,10))[0]}
+                    category="Books"
+                />
+            );
+        };
+
+        const DetailedMovieReview = ({match}) => {
+            return(
+                <DetailedMediaReview
+                    item={this.props.movies.movies.filter((movie) => movie.id === parseInt(match.params.movieId,10))[0]}
+                    category="Movies"
+                />
+            );
+        };
+
         return (
             <div>
                 <Header />
@@ -68,9 +100,18 @@ class Main extends Component {
                             <Switch location={this.props.locationitch}>
                                 <Route path='/home' component={HomePage} />                                
                                 <Route exact path='/about' render={() => <About resetFeedbackForm={this.props.resetFeedbackForm} postFeedback={this.props.postFeedback} />} />
+                                
+
                                 <Route exact path='/music' render={() => <Music albums={this.props.albums} />} />
+                                <Route path='/music/:albumId' component={DetailedAlbumReview} />
+
                                 <Route exact path='/books' render={() => <Books books={this.props.books} />} />
+                                <Route path='/music/:bookId' component={DetailedBookReview} />
+
                                 <Route exact path='/movies' render={() => <Movies movies={this.props.movies} />} />
+                                <Route path='/music/:movieId' component={DetailedMovieReview} />
+
+
                                 <Redirect to="/home" />
                             </Switch>
                         </CSSTransition>

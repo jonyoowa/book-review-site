@@ -19,7 +19,7 @@ const RenderMovies = (movie) => {
                         <CardText>
                             Sample text here
                         </CardText>
-                        <Button variant="primary">Button</Button>
+                        <Button variant="primary">More</Button>
                     </CardBody>
                 </Card>
             </div>
@@ -30,7 +30,7 @@ const RenderMovies = (movie) => {
 const Movies = (props) => {
     const movies = props.movies.movies.map((movie) => {
         return (
-            <div className="col-12 col-md-5 m-1">
+            <div className="col-12 col-md-5 m-1 pb-2">
                 <RenderMovies movie={movie} />
             </div>
         );

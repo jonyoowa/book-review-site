@@ -19,7 +19,7 @@ const RenderBooks = (book) => {
                         <CardText>
                             Sample text here
                         </CardText>
-                        <Button variant="primary">Button</Button>
+                        <Button variant="primary">More</Button>
                     </CardBody>
                 </Card>
             </div>
@@ -30,7 +30,7 @@ const RenderBooks = (book) => {
 const Books = (props) => {
     const books = props.books.books.map((book) => {
         return (
-            <div className="col-4 col-md-4 m-6">
+            <div className="col-4 col-md-4 m-6 pb-2">
                 <RenderBooks book={book} />
             </div>
         );
