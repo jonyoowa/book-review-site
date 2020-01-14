@@ -17,7 +17,6 @@ const RenderBooks = (book) => {
                     <CardBody>
                         <CardTitle>{book.book.name}</CardTitle>
                         <CardText>
-                            Sample text here
                         </CardText>
                         <Button variant="primary">More</Button>
                     </CardBody>

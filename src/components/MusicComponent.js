@@ -20,7 +20,6 @@ const RenderAlbums = (album) => {
                     <CardBody>
                         <CardTitle>{album.album.name}</CardTitle>
                         <CardText>
-                            Sample text here
                         </CardText>
 
                         <Link to={`/music/${album.album.id}`}>

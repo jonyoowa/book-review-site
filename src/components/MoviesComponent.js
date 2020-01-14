@@ -17,7 +17,6 @@ const RenderMovies = (movie) => {
                     <CardBody>
                         <CardTitle>{movie.movie.name}</CardTitle>
                         <CardText>
-                            Sample text here
                         </CardText>
                         <Button variant="primary">More</Button>
                     </CardBody>
