@@ -1,19 +1,127 @@
 {
-  "posts": [
+  "movies": [
+    {
+      "id": 0,
+      "name": "Bad Times at the El Royale",
+      "image": "images/bad_times_at_the_el_royale_poster.jpg",
+      "director": "Drew Goddard",
+      "year": "2018",
+      "featured": true,
+      "summary": "A neo-noir film that keeps you on the edge with its twists.",
+      "description": "Taking place at a hotel in the middle of the California-Nevada border, the film evokes motifs commonly included in neo-noir; lighting effects, mysterious motivations, and a cut-and-paste style of narrative. The seven guests have their backgrounds exposed slowly, with each relevation giving you an 'ah-ha' moment. With a mix of Hitchcock-style mystery and Tarantino-style violence, this was 2018's most underrated film."
+    },
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "name": "The Empire Strikes Back",
+      "image": "images/the_empire_strikes_back_poster.jpg",
+      "director": "Irvin Kreshner",
+      "year": "1980",
+      "featured": false,
+      "summary": "The sequel to the famous space opera, The Empire Strikes Back takes Star Wars for a darker turn.",
+      "description": "Set 3 years after the events of the first Star Wars film, The Empire Strikes Back is the more dreery counterpart to A New Hope. The special effects for its time are even more impressive than A New Hope's, with giant robot walkers on an ice planet and a futuristic city floating above the clouds. With much of the plot dealing with the Rebel Alliance fleeing from the evil Galactic Empire, Luke's fate is sent to a dark place with the famouse reveal of Darth Vader being his father. All in all, one of the greatest science fiction movies of all time."
+    },
+    {
+      "id": 2,
+      "name": "Horrible Bosses",
+      "image": "images/horrible_bosses_poster.jpg",
+      "director": "Seth Gordon",
+      "year": "2011",
+      "featured": false,
+      "summary": "A black comedy film about three friends who've decided to kill their bosses.",
+      "description": "A black comedy story about three buds who want to kill their bosses, this movie always gets me laughing. Three friends all find themselves in a situation where they've had enough of their bosses' terrible treatment, and plot to kill each other's bosses in order to make them look like accidents. With the help of a consultant, the three friends begin to execute their plan. Unfortunately, they realize things can go much, much worse as their plans go awry. A sleeper hit of 2011, the movie's politcally incorrect humor is carried out well by the audience's ensemble cast."
+    },
+    {
+      "id": 3,
+      "name": "Musa",
+      "image": "images/musa_the_warrior_poster.jpg",
+      "director": "Kim Sung-su",
+      "year": "2001",
+      "featured": false,
+      "summary": "An epic taking place in 14th century East Asia, Musa: The Warrior is one of the definitive Korean histotrical films.",
+      "description": "A semi-historical film about a convoy of Goryeo soldiers traveling through Ming China in 1375. The band, sidetracked from their original goal of meeting the new Chinese dynasty's emperor, discover the emperor's daughter in Mongol captivity and takes the opportunity to free her. Unlike most sword-buckling East Asian period movies, Musa's fight scences are noticably more realistic and grittier. The scenery also does well in depicting the natural beauty of the diverse Chinese landscape."
     }
   ],
-  "comments": [
+  "albums": [
+    {
+      "id": 0,
+      "name": "Rage Against the Machine",
+      "band": "Rage Against the Machine",
+      "image": "images/ratm_album.jpeg",
+      "featured": false,
+      "summary": "",
+      "description": "One of the best representations of combining hip-hop and heavy metal, Rage Against the Machine's self titled debut is still awesome in 2019. Being the first album I've ever bought, it has influenced my taste in music. Songs like 'Bombtrack' and 'Killing in the Name' demonstrate Tom Morello's innovative guitar style. Morello's unorthodox guitar solos display his ability to create versatile sounds with a single instrument and a few effects pedals."
+    },
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "Kill 'Em All",
+      "band": "Metallica",
+      "image": "images/kill_em_all_album.jpg",
+      "featured": false,
+      "summary": "",
+      "description": "Metallica's debut is a timeless classic that defined American thrash metal, fusing new wave of British heavy metal (NWOBHM) with hardcore punk. Originally confined to playing in local clubs in the L.A. area, the release of this album saw the seeping of heavy metal into the mainstream music scene. While overshadowed by the later releases of 'Ride the Lightning' and 'Master of Puppets', the lack of overplay keeps the songs on the album fresh for any new metalhead looking for the classics."
+    },
+    {
+      "id": 2,
+      "name": "Rust in Peace",
+      "band": "Megadeth",
+      "image": "images/rust_in_peace_album.jpg",
+      "featured": true,
+      "summary": "",
+      "description": "This is Megadeth at their best. The craftsmanship of Dave Mustaine and Marty Friedman results in some the best, if not the best, metal guitar tracks of all time. Add in Ellefson's groovy baselines and Menza's drum tracks to create a heavy metal masterpiece. Aside from the vocals, which can be a hit or miss depending on your preferences, everything else about the music is perfect. Every song on this album is so good that choosing a best song is near impossible. No fillers here, only 9 amazing tracks that will blow you out of the water."
+    },
+    {
+      "id": 3,
+      "name": "Ensiferum",
+      "band": "Ensiferum",
+      "image": "images/ensiferum_album.jpg",
+      "featured": false,
+      "summary": "",
+      "description": "My favorite folk metal album of all time. Ensiferum's debut is the perfect mix of riffs, melodies and guitar work interwoven with acoustic folk sections. The various songs in this album evoke a different mood, from fast-paced riffing in Wind Rider or epic choruses in Old Man (Väinämöinen). Regardless of the different feelings evoked, all the songs makes one imagine themself in the middle of a fantasy battlefield."
+    },
+    {
+      "id": 4,
+      "name": "The Gallery",
+      "band": "Dark Tranquillity",
+      "image": "images/the_gallery_album.jpg",
+      "featured": false,
+      "summary": "",
+      "description": "One the most important Gothenburg-style melodic death metal albums, 'The Gallery' is an underrated album filled with Mikael Stanne's amazing death growls amid beautiful distorted melodies. Neo-classical inspired solos are all so present, yet none of the guitarists try to do too much, preventing the album from sounding like a bunch of Yngwie Malmsteem wannabes. Without a doubt, Dark Tranquillity's best album."
+    },
+    {
+      "id": 5,
+      "name": "Powerslave",
+      "band": "Iron Maiden",
+      "image": "images/powerslave_album.jpg",
+      "featured": false,
+      "summary": "",
+      "description": "Iron Maiden produces yet again another great album with their signature historical lyrics, powerful vocals, and catchy guitar riffs. The band's songwriting on this album is in top form and the contributions of each band member is apparent. This record contains some of Maiden's most famous and recognizable riffs, such as 'Two Minutes to Midnight', 'Aces High', and 'Powerslave'. Additionaly, the production of the album is very crisp and not overdone like many modern metal albums. Easily deserves its place as one of Iron Maiden's most classic albums."
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "books": [
+    {
+      "id": 0,
+      "name": "Anathem",
+      "image": "images/Anathem.jpg",
+      "featured": false,
+      "summary": "On the fictional planet of Arbre, the planet's intellectuals entered monastic communities to protect their activies from the collapse of society.",
+      
+      "description": "Like many of Neal Stephenson's books, Anathem is a book where the reader needs to be commited to fully grasp the narrative of the novel. The books contains many big ideas in an invented world that "
+    },
+    {
+      "id": 1,
+      "name": "Heir the the Empire",
+      "image": "images/Heir_to_the_Empire.jpg",
+      "featured": true,
+      "summary": "",
+      "description": "The Rebel Alliance, now known as the New Republic, has driven out the remnants of the old Imperial Starfleet to a distant corner of the galaxy, and is attempting to set up a functional government. Princess Leia and Han Solo are married and expecting twins. Luke Skywalker has become the first in a long-awaited new line of Jedi Knights. Thousands of light years away, Grand Admiral Thrawn, the last and most brilliant of the 12 Grand Admirals, has taken command of the shattered Imperial Fleet and prepared it to attack the New Republic. Thrawn is searching for a Dark Jedi to join his side, and is confident he can restore the Empire."
+    },
+    {
+      "id": 2,
+      "name": "The White Company",
+      "image": "images/The_White_Company.jpg",
+      "featured": false,
+      "summary": "A historical adventure by British writer Arthur Conan Doyle, set during the Hundred Years' War.",
+      "description": ""
+    }
+  ]
 }
